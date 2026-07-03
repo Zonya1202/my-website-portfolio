@@ -1,0 +1,77 @@
+@import 'tailwindcss';
+
+/* Фирменный шрифт сайта — JetBrains Mono */
+@import '@fontsource/jetbrains-mono/400.css';
+@import '@fontsource/jetbrains-mono/500.css';
+@import '@fontsource/jetbrains-mono/700.css';
+
+/* Вариант dark:* для точечных случаев (тема переключается классом .dark на <html>) */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/*
+  ПАЛИТРА ТЕМ — меняешь цвета здесь, обновляется по всему сайту.
+  :root  — светлая тема (тёплый крем)
+  .dark  — тёмная тема (фиолет)
+*/
+:root {
+  --bg: #f4f1ea;        /* фон страницы */
+  --surface: #fbf9f4;   /* карточки/панели */
+  --surface-2: #ece7db; /* второстепенные поверхности */
+  --fg: #22201c;        /* основной текст */
+  --muted: #6b6558;     /* приглушённый текст */
+  --accent: #6d3fe0;    /* акцент — кнопки, ссылки */
+  --accent-soft: rgba(109, 63, 224, 0.12);
+  --avatar-bg: #e6ddff; /* фон круга аватарки (мягкий лавандовый под крем) */
+  --border: rgba(34, 32, 28, 0.1);
+}
+
+.dark {
+  --bg: #1e1b2e;
+  --surface: #2a2440;
+  --surface-2: #201c33;
+  --fg: #ede9f5;
+  --muted: #a89fc4;
+  --accent: #7c4dff;
+  --accent-soft: rgba(124, 77, 255, 0.16);
+  --avatar-bg: #7c4dff; /* насыщенный фиолет для тёмной темы */
+  --border: rgba(255, 255, 255, 0.08);
+}
+
+/*
+  Пробрасываем переменные в токены Tailwind.
+  Отсюда берутся классы: bg-bg, bg-surface, text-fg, text-muted,
+  text-accent, border-border, font-mono, bg-avatar-bg и т.д.
+*/
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-avatar-bg: var(--avatar-bg);
+  --color-border: var(--border);
+
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100svh;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-mono);
+    /* плавная смена цветов при переключении темы */
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
