@@ -1,4 +1,5 @@
-import { profile, footer } from '../../data'
+import { footer } from '../../data'
+import { Logo } from '../ui/Logo'
 import { SocialLinks } from '../ui/SocialLinks'
 
 /** Подвал сайта: лого + таглайн слева, соц-иконки справа, копирайт снизу. */
@@ -9,13 +10,7 @@ export function Footer() {
         {/* Верхний ряд: лого/таглайн + соцсети (переиспользуем SocialLinks) */}
         <div className="flex flex-col items-center gap-6 sm:flex-row sm:items-start sm:justify-between">
           <div className="flex flex-col items-center gap-2 text-center sm:items-start sm:text-left">
-            <a
-              href="#home"
-              className="flex items-center gap-1 text-lg font-bold text-fg"
-            >
-              <span className="text-accent">&lt;/&gt;</span>
-              {profile.logo}
-            </a>
+            <Logo className="text-lg" />
             <p className="max-w-xs text-sm text-muted">{footer.tagline}</p>
           </div>
           <SocialLinks />

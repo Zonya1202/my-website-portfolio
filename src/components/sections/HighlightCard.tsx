@@ -1,19 +1,13 @@
-import type { IconType } from 'react-icons'
 import { FiArrowRight } from 'react-icons/fi'
+import type { HighlightItem } from '../../data'
 
 /*
   Одна карточка секции «Что я привношу».
   Единственная ответственность — отрисовать одну карточку по переданным данным.
+  Тип пропсов = форма элемента данных (HighlightItem), чтобы не дублировать структуру.
   Секция Highlights просто маппит массив на эти карточки.
 */
-interface HighlightCardProps {
-  icon: IconType
-  title: string
-  text: string
-  link?: { label: string; url: string }
-}
-
-export function HighlightCard({ icon: Icon, title, text, link }: HighlightCardProps) {
+export function HighlightCard({ icon: Icon, title, text, link }: HighlightItem) {
   return (
     <div className="flex h-full flex-col items-center gap-4 rounded-2xl border border-border bg-surface p-8 text-center transition-all hover:-translate-y-1 hover:border-accent/40">
       {/* Иконка в мягком акцентном квадрате */}
@@ -32,7 +26,7 @@ export function HighlightCard({ icon: Icon, title, text, link }: HighlightCardPr
           rel="noreferrer"
           className="mt-auto inline-flex items-center gap-1.5 text-sm text-accent transition-opacity hover:opacity-80"
         >
-          {link.label} <FiArrowRight size={15} />
+          {link.label} <FiArrowRight size={15} aria-hidden="true" />
         </a>
       )}
     </div>

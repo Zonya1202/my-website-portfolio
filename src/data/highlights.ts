@@ -13,12 +13,15 @@ export const highlightsSection = {
   subtitle: 'Сочетаю продакшн-опыт во фронтенде с тягой к инфраструктуре и AI.',
 }
 
-export const highlights: {
+/** Форма одной карточки. Используется и здесь, и в компоненте HighlightCard. */
+export interface HighlightItem {
   icon: IconType
   title: string
   text: string
   link?: { label: string; url: string }
-}[] = [
+}
+
+export const highlights: HighlightItem[] = [
   {
     icon: FiBriefcase,
     title: '2+ года в продакшене',
