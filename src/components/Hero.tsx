@@ -36,7 +36,7 @@ export function Hero() {
         </span>
 
         <div className="flex flex-col gap-2">
-          <p className="text-muted">{profile.greeting} 👋</p>
+          <p className="text-muted">{profile.greeting}</p>
           <h1 className="text-4xl font-bold leading-tight text-fg sm:text-5xl">
             {firstName} <span className="text-accent">{lastName}</span>
           </h1>
