@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { profile, skills } from '../data/profile'
+import { profile, skills } from '../../data'
 
 /*
   Аватарка в круге + иконки скилов по орбите.

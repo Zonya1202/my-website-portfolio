@@ -1,4 +1,4 @@
-import { socials } from '../data/profile'
+import { socials } from '../../data'
 
 /** Ряд соц-иконок под именем. */
 export function SocialLinks() {

@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion'
 import { FiDownload } from 'react-icons/fi'
-import { profile, contactIcon as ContactIcon } from '../data/profile'
-import { SocialLinks } from './SocialLinks'
-import { Avatar } from './Avatar'
-import { Typewriter } from './Typewriter'
+import { profile, contactIcon as ContactIcon } from '../../data'
+import { SocialLinks } from '../ui/SocialLinks'
+import { Avatar } from '../ui/Avatar'
+import { Typewriter } from '../ui/Typewriter'
 
 // Пресет плавного появления снизу.
 const fadeUp = {

@@ -1,6 +1,6 @@
 import { ThemeProvider } from './context/ThemeProvider'
-import { Navbar } from './components/Navbar'
-import { Hero } from './components/Hero'
+import { Navbar } from './components/layout/Navbar'
+import { Hero } from './components/sections/Hero'
 
 export default function App() {
   return (

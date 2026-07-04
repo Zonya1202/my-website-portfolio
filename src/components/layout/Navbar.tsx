@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
-import { profile, navLinks } from '../data/profile'
-import { ThemeToggle } from './ThemeToggle'
+import { profile, navLinks } from '../../data'
+import { ThemeToggle } from '../ui/ThemeToggle'
 
 /** Верхняя стеклянная панель: лого, меню, переключатель темы. */
 export function Navbar() {
