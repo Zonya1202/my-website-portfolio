@@ -3,10 +3,13 @@ import { ThemeContext, type Theme } from './theme'
 
 /** Стартовая тема: сохранённая → системная → светлая. */
 function getInitialTheme(): Theme {
-  const saved = localStorage.getItem('theme')
-  if (saved === 'light' || saved === 'dark') return saved
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-  return prefersDark ? 'dark' : 'light'
+  try {
+    const saved = localStorage.getItem('theme')
+    if (saved === 'light' || saved === 'dark') return saved
+  } catch {
+    // localStorage недоступен (приватный режим и т.п.) — падать нельзя, берём системную
+  }
+  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
 }
 
 /** Оборачивает приложение и хранит выбранную тему. */
@@ -16,7 +19,11 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   // Вешаем/снимаем класс .dark на <html> и запоминаем выбор.
   useEffect(() => {
     document.documentElement.classList.toggle('dark', theme === 'dark')
-    localStorage.setItem('theme', theme)
+    try {
+      localStorage.setItem('theme', theme)
+    } catch {
+      // localStorage недоступен — тема просто не сохранится между сессиями
+    }
   }, [theme])
 
   const toggleTheme = () =>

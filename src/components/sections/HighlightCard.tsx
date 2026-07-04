@@ -9,7 +9,7 @@ export function HighlightCard({ icon: Icon, title, text, link }: HighlightItem) 
   return (
     <div className="flex h-full flex-col items-center gap-4 rounded-2xl border border-border bg-surface p-8 text-center transition-all hover:-translate-y-1 hover:border-accent/40">
       <span className="grid h-14 w-14 place-items-center rounded-2xl bg-accent-soft text-accent">
-        <Icon size={26} />
+        <Icon size={26} aria-hidden="true" />
       </span>
 
       <h3 className="text-lg font-bold text-fg">{title}</h3>

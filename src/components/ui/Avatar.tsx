@@ -16,7 +16,7 @@ export function Avatar() {
       <div className="relative z-10 grid h-3/5 w-3/5 place-items-center overflow-hidden rounded-full bg-avatar-bg p-3">
         <img
           src={profile.avatarUrl}
-          alt={profile.name}
+          alt={`Аватар — ${profile.name}`}
           className="h-full w-full object-contain"
         />
       </div>
@@ -47,7 +47,7 @@ export function Avatar() {
                   ease: 'linear',
                 }}
               >
-                <Icon size={22} style={{ color }} />
+                <Icon size={22} style={{ color }} aria-hidden="true" />
               </motion.div>
             </div>
           )
