@@ -1,6 +1,8 @@
 import { ThemeProvider } from './context/ThemeProvider'
 import { Navbar } from './components/layout/Navbar'
+import { Footer } from './components/layout/Footer'
 import { Hero } from './components/sections/Hero'
+import { Highlights } from './components/sections/Highlights'
 
 export default function App() {
   return (
@@ -9,7 +11,9 @@ export default function App() {
         <Navbar />
         <main>
           <Hero />
+          <Highlights />
         </main>
+        <Footer />
       </div>
     </ThemeProvider>
   )
