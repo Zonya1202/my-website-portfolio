@@ -1,16 +1,13 @@
 import { FiArrowRight } from 'react-icons/fi'
-import type { HighlightItem } from '../../data'
+import type { HighlightItem } from '@/data'
 
 /*
-  Одна карточка секции «Что я привношу».
-  Единственная ответственность — отрисовать одну карточку по переданным данным.
-  Тип пропсов = форма элемента данных (HighlightItem), чтобы не дублировать структуру.
-  Секция Highlights просто маппит массив на эти карточки.
+  Одна карточка секции «Что я привношу». Пропсы = форма элемента данных
+  (HighlightItem), чтобы не дублировать структуру. Секция Highlights маппит массив.
 */
 export function HighlightCard({ icon: Icon, title, text, link }: HighlightItem) {
   return (
     <div className="flex h-full flex-col items-center gap-4 rounded-2xl border border-border bg-surface p-8 text-center transition-all hover:-translate-y-1 hover:border-accent/40">
-      {/* Иконка в мягком акцентном квадрате */}
       <span className="grid h-14 w-14 place-items-center rounded-2xl bg-accent-soft text-accent">
         <Icon size={26} />
       </span>
@@ -18,7 +15,7 @@ export function HighlightCard({ icon: Icon, title, text, link }: HighlightItem) 
       <h3 className="text-lg font-bold text-fg">{title}</h3>
       <p className="text-sm text-muted">{text}</p>
 
-      {/* Ссылка прижата к низу (mt-auto), чтобы у карточек разной высоты она была на одной линии */}
+      {/* mt-auto — прижать ссылку к низу, чтобы у карточек разной высоты она была на одной линии */}
       {link && (
         <a
           href={link.url}

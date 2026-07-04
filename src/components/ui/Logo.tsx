@@ -1,8 +1,8 @@
-import { profile } from '../../data'
+import { profile } from '@/data'
 
 /**
- * Текстовый логотип сайта `</> zonya`, ведёт на верх страницы.
- * Используется в шапке (Navbar) и подвале (Footer) — размер задаётся через className.
+ * Текстовый логотип `</> zonya`, ведёт наверх страницы.
+ * Используется в шапке и подвале — размер задаётся через className.
  */
 export function Logo({ className = 'text-xl' }: { className?: string }) {
   return (

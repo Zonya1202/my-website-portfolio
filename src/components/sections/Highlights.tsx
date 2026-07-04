@@ -1,12 +1,11 @@
 import { motion } from 'framer-motion'
-import { highlights, highlightsSection } from '../../data'
+import { highlights, highlightsSection } from '@/data'
 import { HighlightCard } from './HighlightCard'
 
 /** Секция под hero: заголовок + сетка из карточек (Фронт / Инфра / AI). */
 export function Highlights() {
   return (
     <section id="about" className="mx-auto max-w-6xl px-4 py-16 lg:py-24">
-      {/* Заголовок секции */}
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -20,7 +19,6 @@ export function Highlights() {
         <p className="mt-3 text-muted">{highlightsSection.subtitle}</p>
       </motion.div>
 
-      {/* Сетка карточек: 3 колонки на десктопе, в столбик на мобилке */}
       <div className="grid gap-6 md:grid-cols-3">
         {highlights.map((item, i) => (
           <motion.div

@@ -1,5 +1,5 @@
 import { FiMoon, FiSun } from 'react-icons/fi'
-import { useTheme } from '../../context/theme'
+import { useTheme } from '@/context/theme'
 
 /** Кнопка переключения светлой/тёмной темы. */
 export function ThemeToggle() {
