@@ -1,11 +1,10 @@
 import { motion } from 'framer-motion'
-import { FiDownload } from 'react-icons/fi'
-import { profile, contactIcon as ContactIcon } from '../../data'
-import { SocialLinks } from '../ui/SocialLinks'
-import { Avatar } from '../ui/Avatar'
-import { Typewriter } from '../ui/Typewriter'
+import { FiDownload, FiChevronDown } from 'react-icons/fi'
+import { profile, contactIcon as ContactIcon } from '@/data'
+import { SocialLinks } from '@/components/ui/SocialLinks'
+import { Avatar } from '@/components/ui/Avatar'
+import { Typewriter } from '@/components/ui/Typewriter'
 
-// Пресет плавного появления снизу.
 const fadeUp = {
   initial: { opacity: 0, y: 24 },
   animate: { opacity: 1, y: 0 },
@@ -13,7 +12,7 @@ const fadeUp = {
 
 /** Главный экран: слева — весь контент, справа — аватар с орбитой скилов. */
 export function Hero() {
-  // Последнюю часть имени подсвечиваем акцентным цветом.
+  // Имя делим, чтобы подсветить фамилию акцентным цветом.
   const nameParts = profile.name.split(' ')
   const firstName = nameParts.slice(0, -1).join(' ')
   const lastName = nameParts.at(-1)
@@ -21,15 +20,13 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="mx-auto grid max-w-6xl items-center gap-12 px-4 py-12 lg:min-h-[calc(100svh-8rem)] lg:grid-cols-2 lg:py-20"
+      className="relative mx-auto grid max-w-6xl items-center gap-12 px-4 py-12 lg:min-h-[calc(100svh-8rem)] lg:grid-cols-2 lg:py-20"
     >
-      {/* Левая колонка: весь контент */}
       <motion.div
         {...fadeUp}
         transition={{ duration: 0.5, delay: 0.1 }}
         className="flex flex-col items-center gap-6 text-center lg:items-start lg:text-left"
       >
-        {/* Бейдж доступности */}
         <span className="inline-flex items-center gap-2 rounded-full border border-green-500/30 bg-green-500/10 px-4 py-1.5 text-sm text-green-600 dark:text-green-400">
           <span className="h-2 w-2 rounded-full bg-green-500" />
           {profile.available}
@@ -43,12 +40,11 @@ export function Hero() {
           <p className="text-lg text-muted">{profile.role}</p>
         </div>
 
-        {/* Описание с эффектом печати (min-h — чтобы блок не прыгал при смене фраз) */}
+        {/* min-h — чтобы блок не прыгал при смене фраз */}
         <p className="min-h-16 max-w-md text-muted">
           <Typewriter phrases={profile.descriptionPhrases} />
         </p>
 
-        {/* Кнопки */}
         <div className="flex flex-wrap items-center justify-center gap-3 lg:justify-start">
           <a
             href={profile.cvUrl}
@@ -70,7 +66,6 @@ export function Hero() {
         <SocialLinks />
       </motion.div>
 
-      {/* Правая колонка: аватар с орбитой скилов */}
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -79,6 +74,15 @@ export function Hero() {
       >
         <Avatar />
       </motion.div>
+
+      {/* Индикатор скролла — только на десктопе (lg), где у Hero высота во весь экран */}
+      <a
+        href="#about"
+        aria-label="Листать вниз"
+        className="absolute bottom-6 left-1/2 hidden -translate-x-1/2 animate-bounce text-muted transition-colors hover:text-accent lg:block"
+      >
+        <FiChevronDown size={28} />
+      </a>
     </section>
   )
 }

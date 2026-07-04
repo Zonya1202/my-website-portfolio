@@ -1,4 +1,4 @@
-import { FaWhatsapp } from 'react-icons/fa6'
+import { FaTelegram } from 'react-icons/fa6'
 
 /*
   Основная информация о владельце сайта.
@@ -25,4 +25,4 @@ export const profile = {
 }
 
 /** Иконка кнопки «Contact me». */
-export const contactIcon = FaWhatsapp
+export const contactIcon = FaTelegram
