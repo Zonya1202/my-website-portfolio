@@ -37,7 +37,16 @@ export function Hero() {
           <h1 className="text-4xl font-bold leading-tight text-fg sm:text-5xl">
             {firstName} <span className="text-accent">{lastName}</span>
           </h1>
-          <p className="text-lg text-muted">{profile.role}</p>
+          <ul className="flex flex-wrap justify-center gap-2 lg:justify-start">
+            {profile.roles.map((role) => (
+              <li
+                key={role}
+                className="rounded-full border border-border bg-surface px-3 py-1 text-sm text-muted"
+              >
+                {role}
+              </li>
+            ))}
+          </ul>
         </div>
 
         {/* min-h — чтобы блок не прыгал при смене фраз */}

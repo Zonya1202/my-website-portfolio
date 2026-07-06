@@ -24,14 +24,14 @@ export interface HighlightItem {
 export const highlights: HighlightItem[] = [
   {
     icon: FiBriefcase,
-    title: '2+ года в продакшене',
-    text: 'Коммерческая разработка корпоративных веб-приложений на Vue 3, React и TypeScript. 20+ интерфейсов в проде.',
+    title: 'Около 2х лет в продакшене',
+    text: 'Коммерческая разработка корпоративных веб-приложений на Vue 3 и TypeScript. 20+ интерфейсов в проде.',
     link: { label: 'Смотреть резюме', url: '/cv.pdf' },
   },
   {
     icon: FiServer,
     title: 'Инфраструктура & DevOps',
-    text: 'Docker, Linux, CI/CD — контейнеризирую, деплою и поддерживаю свои проекты.',
+    text: 'Docker, Linux, CI/CD, Мониторинг — контейнеризирую, деплою и поддерживаю свои проекты.',
     link: { label: 'Мой GitHub', url: 'https://github.com/Zonya1202' },
   },
   {
