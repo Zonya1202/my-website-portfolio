@@ -1,5 +1,6 @@
 import type { IconType } from 'react-icons'
-import { FiCode, FiServer, FiCpu } from 'react-icons/fi'
+import { FiCode, FiServer, FiCpu, FiCheckCircle } from 'react-icons/fi'
+import { TbBrandVscode, TbTicket } from 'react-icons/tb'
 import {
   SiVuedotjs,
   SiTypescript,
@@ -7,7 +8,6 @@ import {
   SiHtml5,
   SiCss,
   SiSass,
-  SiTailwindcss,
   SiPinia,
   SiGraphql,
   SiVite,
@@ -19,7 +19,11 @@ import {
   SiPython,
   SiPostgresql,
   SiClaude,
+  SiGrafana,
+  SiReact,
   SiFigma,
+  SiGithub,
+  SiGitlab,
 } from 'react-icons/si'
 
 /*
@@ -51,15 +55,16 @@ export const skillGroups: SkillGroup[] = [
     title: 'Frontend',
     skills: [
       { icon: SiVuedotjs, label: 'Vue 3', color: '#42B883' },
+      { icon: SiReact, label: 'React', color: '#61DAFB' },
       { icon: SiTypescript, label: 'TypeScript', color: '#3178C6' },
       { icon: SiJavascript, label: 'JavaScript', color: '#F7DF1E' },
       { icon: SiPinia, label: 'Pinia', color: '#FFD859' },
       { icon: SiGraphql, label: 'GraphQL', color: '#E10098' },
-      { icon: SiTailwindcss, label: 'Tailwind', color: '#06B6D4' },
       { icon: SiSass, label: 'Sass', color: '#CC6699' },
       { icon: SiVite, label: 'Vite', color: '#646CFF' },
       { icon: SiHtml5, label: 'HTML5', color: '#E34F26' },
       { icon: SiCss, label: 'CSS', color: '#663399' },
+      { icon: FiCheckCircle, label: 'Playwright', color: '#2EAD33' },
     ],
   },
   {
@@ -71,8 +76,9 @@ export const skillGroups: SkillGroup[] = [
       { icon: SiNginx, label: 'Nginx', color: '#009639' },
       { icon: SiGithubactions, label: 'CI/CD', color: '#2088FF' },
       { icon: SiGit, label: 'Git', color: '#F05032' },
-      { icon: SiPostgresql, label: 'PostgreSQL', color: '#4169E1' },
+      { icon: SiPostgresql, label: 'SQL', color: '#4169E1' },
       { icon: SiPython, label: 'Python', color: '#3776AB' },
+      { icon: SiGrafana, label: 'Grafana', color: '#F46800' },
     ],
   },
   {
@@ -80,7 +86,11 @@ export const skillGroups: SkillGroup[] = [
     title: 'AI / Tools',
     skills: [
       { icon: SiClaude, label: 'Claude', color: '#D97757' },
+      { icon: TbBrandVscode, label: 'VS Code', color: '#007ACC' },
       { icon: SiFigma, label: 'Figma', color: '#F24E1E' },
+      { icon: TbTicket, label: 'YouTrack', color: '#9333EA' },
+      { icon: SiGithub, label: 'GitHub', color: '#6E7681' },
+      { icon: SiGitlab, label: 'GitLab', color: '#FC6D26' },
     ],
   },
 ]
